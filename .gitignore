@@ -1,2 +1,3 @@
 # this ignores any jetbrains config files.
 .idea
+customworkspace.txt
