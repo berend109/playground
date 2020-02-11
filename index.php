@@ -9,7 +9,6 @@
 <body>
 
 	<p>Welcome to the playground</p>
-:w
-:w
+
 </body>
 </html>
