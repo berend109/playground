@@ -18,14 +18,6 @@
 
 	<p>Welcome to the playground</p>
 
-	<form action="assets/php/write.php" method="get">
-
-		<input type="text" name="customWorkspace" placeholder="create custom workspace."><br>
-
-		<button>submit</button>
-		
-	</form>
-
     <div id="playground-div">
         <?php
             foreach ($scanned_directory as $value) {
