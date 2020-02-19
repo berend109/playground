@@ -1,6 +1,6 @@
 <?php
 
-    require_once 'assets/main.php';
+    include 'assets/main.php';
 
 ?>
 
@@ -21,10 +21,12 @@
             foreach ($scanned_directory as $value) {
                 if ($value != 'dotfiles') {
                     if ($value != 'playground') {
-                        echo '<form action="../'. $value. '" target="_blank">';
-                        echo '<button>'. $value. '</button>';
-                        echo '<br>';
-                        echo '</form>';
+						if ($value != '.idea') {
+							echo '<form action="../'. $value. '" target="_blank">';
+							echo '<button>'. $value. '</button>';
+							echo '<br>';
+							echo '</form>';
+						}
                     }
                 }
             }
