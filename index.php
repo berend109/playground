@@ -1,6 +1,7 @@
 <?php
 
-    include 'assets/main.php';
+	// php files
+	require_once 'assets/php/search.php';
 
 ?>
 
@@ -31,7 +32,12 @@
                 }
             }
         ?>
-    </div>
+		<form action="assets/php/insertNewWorkspace.php">
+			<p>Add new workspace !!!</p>
+			<input>
+    		<button type="submit">Sumbit</button>
+		</form>
+	</div>
 
 </body>
 </html>
