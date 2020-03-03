@@ -2,6 +2,9 @@
 
 	// php files
 	require_once 'assets/php/search.php';
+	
+	// comment becaue not needed while testing 
+	// require_once 'assets/php/send.php';
 
 ?>
 
@@ -32,11 +35,13 @@
                 }
             }
         ?>
-		<form action="assets/php/insertNewWorkspace.php">
-			<p>Add new workspace !!!</p>
-			<input>
-    		<button type="submit">Sumbit</button>
-		</form>
+		<!-- Working code -->
+		<!-- comment because it is not needed any more while testing -->
+		<!-- <form  method='POST'>
+			<p>Add your new workspace to the playground</p>
+			Dir: <input type='text' name='input'/>
+    		<button type='submit'>Submit</button>
+		</form> -->
 	</div>
 
 </body>
