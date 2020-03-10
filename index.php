@@ -1,9 +1,3 @@
-<?php
-
-    include 'assets/main.php';
-
-?>
-
 <!DOCTYPE html>
 <html lang="eng">
 
@@ -18,20 +12,19 @@
 
     <div id="playground-div">
         <?php
-            foreach ($scanned_directory as $value) {
-                if ($value != 'dotfiles') {
-                    if ($value != 'playground') {
-						if ($value != '.idea') {
-							echo '<form action="../'. $value. '" target="_blank">';
-							echo '<button>'. $value. '</button>';
-							echo '<br>';
-							echo '</form>';
-						}
-                    }
-                }
-            }
+			require_once 'assets/php/displayWorkspaces.php';
+			
+			$scannedDir = (getDir($con, $scannedDir));
+			checkDir($scannedDir);
         ?>
-    </div>
+
+		<form  method='POST' action='assets/php/send.php'>
+			<br><br>
+			<p>Add your new workspace to the playground</p>
+			Dir: <input type='text' name='input'/>
+    		<button type='submit'>Submit</button>
+		</form>
+	</div>
 
 </body>
 </html>
