@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once 'get.php';
 
 // first check if dir even exist that is stored in the DB.
@@ -13,6 +15,10 @@ function checkDir($scannedDir) {
 		} else {
 			echo '<br><br>';
 			echo 'Workspace not found ('. $directory. ')';
+			$_SESSION['dirToRemove'] = $directory;
+			echo '<form action="assets/php/remove.php">';
+			echo '<button>Remove Directory</button>';
+			echo '</form>';
 		}
 	}
 }
