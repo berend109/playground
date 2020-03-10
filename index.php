@@ -18,7 +18,7 @@
 			checkDir($scannedDir);
         ?>
 
-		<form  method='POST'>
+		<form  method='POST' action='assets/php/send.php'>
 			<br><br>
 			<p>Add your new workspace to the playground</p>
 			Dir: <input type='text' name='input'/>

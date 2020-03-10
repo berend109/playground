@@ -11,6 +11,7 @@ try {
     $sql = "INSERT INTO `projects`(`projectDir`) VALUES ('$input')";
     $con->exec($sql);
     echo "New record created successfully";
+    header( "Refresh:3; url=../../index.php");
 }
 catch(PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
