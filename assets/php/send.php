@@ -7,6 +7,11 @@ $con = $pdo->connect();
 
 $input = $_POST['input'];
 
+// windows setting
+$input = addslashes($input);
+
+echo $input;
+
 try {
     $sql = "INSERT INTO `projects`(`projectDir`) VALUES ('$input')";
     $con->exec($sql);

@@ -8,6 +8,15 @@ $con = $pdo->connect();
 
 $dirToRemove = $_SESSION['dirToRemove'];
 
+echo $dirToRemove;
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo $dirToRemove = addslashes($dirToRemove);
+echo "<br>";
+echo "<br>";
+echo "<br>";
+
 try {
 	$sql = "DELETE FROM `projects` WHERE `projectDir` = ('$dirToRemove')"; 
 	$con->exec($sql);
