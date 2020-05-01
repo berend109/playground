@@ -1,11 +1,16 @@
 <?php
 
-require_once 'con.php';
+require_once 'conn.php';
 
 $pdo = new connection;
 $con = $pdo->connect();
 
 $input = $_POST['input'];
+
+// windows setting
+$input = addslashes($input);
+
+echo $input;
 
 try {
     $sql = "INSERT INTO `projects`(`projectDir`) VALUES ('$input')";

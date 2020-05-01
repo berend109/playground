@@ -1,6 +1,6 @@
 <?php
 
-require_once 'con.php';
+require_once 'conn.php';
 
 $pdo = new connection;
 $con = $pdo->connect();
