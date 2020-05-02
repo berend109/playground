@@ -38,5 +38,9 @@ function displayWorkspace($directory) {
 			echo '<button>'. $value. '</button>';
 			echo '<br>';
 			echo '</form>';
+			return;
+		} else {
+			echo '<p>No projects yet !!</p>';
+			return;
 		}
 }
