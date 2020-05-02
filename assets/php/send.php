@@ -7,10 +7,8 @@ $con = $pdo->connect();
 
 $input = $_POST['input'];
 
-// windows setting
+// windows setting backwards slash is not supported on phpMyAdmin
 $input = addslashes($input);
-
-echo $input;
 
 try {
 	$sql = "INSERT INTO `projects`(`projectDir`) VALUES ('$input')";
