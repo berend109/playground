@@ -15,11 +15,11 @@ function getDir($con, $scannedDir) {
 		foreach(($stmt->fetchAll()) as $dbDirectory) {
 			array_push($scannedDir, $dbDirectory);
 		}
-	}
-	catch(PDOException $e) {
+	} catch (PDOException $e) {
 		echo "Error: " . $e->getMessage();
 	}
+	
 	$conn = null;
 
-return $scannedDir;
+	return $scannedDir;
 }

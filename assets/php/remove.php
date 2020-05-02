@@ -12,7 +12,7 @@ try {
 	$sql = "DELETE FROM `projects` WHERE `projectDir` = ('$dirToRemove')"; 
 	$con->exec($sql);
 	echo 'Dir successfully deleted';
-} catch(PDOException $e) {
+} catch (PDOException $e) {
 	echo $sql . "<br>". $e->getMessage();
 }
 
