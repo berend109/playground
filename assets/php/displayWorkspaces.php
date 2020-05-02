@@ -33,12 +33,10 @@ function displayWorkspace($directory) {
 	echo '<p>'. $directory. '</p>';
 
 	// displays each project as a button to the screen.
-	foreach ($scanned_directory as $value) {
-		if ($value != 'playground' && $value != '.idea') {
+	foreach ($scanned_directory as $value) if ($value != 'playground' && $value != '.idea') {
 			echo '<form action="../'. $value. '" target="_blank">';
 			echo '<button>'. $value. '</button>';
 			echo '<br>';
 			echo '</form>';
 		}
-	}
 }
