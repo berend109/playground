@@ -26,12 +26,12 @@ function checkDir($scannedDir) {
 // count the amount of folders that exists in the directory.
 function countProjects($directory) {
 	$files1 = glob($directory ."*");
-	$filecount = count($files1);
+	$fileCount = count($files1);
 
 	// TODO create this if else in such a way that it doesn't need playground in the number
 	// 		now you have to have the number at 1 becuase of the playground folder.
 	// 		but that defeats the purpose of this app as you can add custom directory's.
-	if ($filecount <= 1) {
+	if ($fileCount <= 1) {
 		echo '<p>'. $directory. '</p>';
 		echo '<br>';
 		echo 'No projects yet !!';

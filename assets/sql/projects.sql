@@ -2,8 +2,8 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 01, 2020 at 05:13 AM
+-- Host: localhost
+-- Generation Time: May 06, 2020 at 10:17 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.5
 
@@ -29,8 +29,15 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `projects` (
   `projectDir` text NOT NULL,
-  `ID` int(11) NOT NULL
+  `ID` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `projects`
+--
+
+INSERT INTO `projects` (`projectDir`, `ID`) VALUES
+('/opt/lampp/htdocs/workspace/github.com/berend109/', 4);
 
 --
 -- Indexes for dumped tables
@@ -50,7 +57,7 @@ ALTER TABLE `projects`
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
