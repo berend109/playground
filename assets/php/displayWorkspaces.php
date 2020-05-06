@@ -28,6 +28,8 @@ function countProjects($directory) {
 	$files1 = glob($directory ."*");
 	$filecount = count($files1);
 
+	// keep the number at 1 for playground. not needed for other workspaces
+	// this may need improvement if this brings problems.
 	if ($filecount <= 1) {
 		echo '<p>'. $directory. '</p>';
 		echo '<br>';
