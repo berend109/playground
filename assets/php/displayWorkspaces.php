@@ -28,8 +28,9 @@ function countProjects($directory) {
 	$files1 = glob($directory ."*");
 	$filecount = count($files1);
 
-	// keep the number at 1 for playground. not needed for other workspaces
-	// this may need improvement if this brings problems.
+	// TODO create this if else in such a way that it doesn't need playground in the number
+	// 		now you have to have the number at 1 becuase of the playground folder.
+	// 		but that defeats the purpose of this app as you can add custom directory's.
 	if ($filecount <= 1) {
 		echo '<p>'. $directory. '</p>';
 		echo '<br>';
@@ -41,14 +42,11 @@ function countProjects($directory) {
 
 // if the dir exist it will display each project as a button.
 function displayWorkspace($directory) {
-	// scan for projects in the dir.
 	// also gets rids of . and .. in unix.
 	$scanned_directory = array_diff(scandir($directory), array('..', '.'));
 
-	// displays the name of the folder where the project nest in.
 	echo '<p>'. $directory. '</p>';
 
-	// displays each project as a button to the screen.
 	foreach ($scanned_directory as $value) {
 		if ($value != 'playground') {
 			echo '<form action="../'. $value. '" target="_blank">';

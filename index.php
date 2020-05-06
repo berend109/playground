@@ -14,7 +14,7 @@
         <?php
 			require_once 'assets/php/displayWorkspaces.php';
 			
-			$scannedDir = (getDir($con, $scannedDir));
+			$scannedDir = getDir($con, $scannedDir);
 			checkDir($scannedDir);
         ?>
 
