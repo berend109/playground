@@ -11,7 +11,7 @@ function checkDir($scannedDir) {
 
 		$checkIfDirExist = (is_dir($directory));
 		if ($checkIfDirExist == true) {
-			displayWorkspace($directory);
+			countProjects($directory);
 		} else {
 			echo '<br><br>';
 			echo 'Workspace not found ('. $directory. ')';
@@ -20,6 +20,23 @@ function checkDir($scannedDir) {
 			echo '<button>Remove Directory</button>';
 			echo '</form>';
 		}
+	}
+}
+
+// count the amount of folders that exists in the directory.
+function countProjects($directory) {
+	$filecount = 0;
+	$files1 = glob($directory ."*");
+	
+	$filecount = glob(count($files1));
+
+	if ($filecount <= 1) {
+		echo '<p>'. $directory. '</p>';
+		echo '<br>';
+		echo '<br>';
+		echo 'No projects yet !!';
+	} else {
+		displayWorkspace($directory);
 	}
 }
 
@@ -33,14 +50,12 @@ function displayWorkspace($directory) {
 	echo '<p>'. $directory. '</p>';
 
 	// displays each project as a button to the screen.
-	foreach ($scanned_directory as $value) if ($value != 'playground' && $value != '.idea') {
-		echo '<form action="../'. $value. '" target="_blank">';
-		echo '<button>'. $value. '</button>';
-		echo '<br>';
-		echo '</form>';
-		return;
-	} else {
-		echo '<p>No projects yet !!</p>';
-		return;
+	foreach ($scanned_directory as $value) {
+		if ($value != 'playground' && $value != '.idea') {
+			echo '<form action="../'. $value. '" target="_blank">';
+			echo '<button>'. $value. '</button>';
+			echo '<br>';
+			echo '</form>';
+		}
 	}
 }
