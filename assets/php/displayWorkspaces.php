@@ -25,14 +25,11 @@ function checkDir($scannedDir) {
 
 // count the amount of folders that exists in the directory.
 function countProjects($directory) {
-	$filecount = 0;
 	$files1 = glob($directory ."*");
-	
-	$filecount = glob(count($files1));
+	$filecount = count($files1);
 
 	if ($filecount <= 1) {
 		echo '<p>'. $directory. '</p>';
-		echo '<br>';
 		echo '<br>';
 		echo 'No projects yet !!';
 	} else {
@@ -51,7 +48,7 @@ function displayWorkspace($directory) {
 
 	// displays each project as a button to the screen.
 	foreach ($scanned_directory as $value) {
-		if ($value != 'playground' && $value != '.idea') {
+		if ($value != 'playground') {
 			echo '<form action="../'. $value. '" target="_blank">';
 			echo '<button>'. $value. '</button>';
 			echo '<br>';
