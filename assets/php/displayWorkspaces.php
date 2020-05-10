@@ -11,7 +11,7 @@ function checkDir($scannedDir) {
 
 		$checkIfDirExist = (is_dir($directory));
 		if ($checkIfDirExist == true) {
-			countProjects($directory);
+			displayWorkspace($directory);
 		} else {
 			echo '<br><br>';
 			echo 'Workspace not found ('. $directory. ')';
@@ -20,23 +20,6 @@ function checkDir($scannedDir) {
 			echo '<button>Remove Directory</button>';
 			echo '</form>';
 		}
-	}
-}
-
-// count the amount of folders that exists in the directory.
-function countProjects($directory) {
-	$files1 = glob($directory ."*");
-	$fileCount = count($files1);
-
-	// TODO create this if else in such a way that it doesn't need playground in the number
-	// 		now you have to have the number at 1 becuase of the playground folder.
-	// 		but that defeats the purpose of this app as you can add custom directory's.
-	if ($fileCount <= 1) {
-		echo '<p>'. $directory. '</p>';
-		echo '<br>';
-		echo 'No projects yet !!';
-	} else {
-		displayWorkspace($directory);
 	}
 }
 
