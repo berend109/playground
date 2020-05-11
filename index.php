@@ -7,6 +7,7 @@
 
 	<!-- css -->
 	<link rel="stylesheet" type="text/css" href="assets/css/logAndRegisterDiv.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/globalFont.css">
 
 </head>
 <body>
@@ -16,7 +17,7 @@
 
 		<div id="login-div">
 			<form method="post" action="assets/php/login.php">
-				<p>login to go to your personal playground</p>
+				<p>login to see your personal playground</p>
 				<input type="text" placeholder="name">
 				<input type="password" placeholder="password">
 				<button>Log in</button>
@@ -25,7 +26,7 @@
 
 		<div id="register-div" hidden>
 			<form method="post" action="assets/php/register.php">
-				<p>get yourself an account to this awesome playground</p>
+				<p>get yourself an account to have your own playground</p>
 				<input type="text" placeholder="name">
 				<input type="password" placeholder="password">
 				<button>register</button>
@@ -33,7 +34,7 @@
 		</div>
 
 		<div id="changeLoginAndRegisterButton">
-			<button>Register</button>
+			<button id="button" type="button" onclick="changeLoginAndRegisterButton()">Register</button>
 		</div>
 	</div>
 

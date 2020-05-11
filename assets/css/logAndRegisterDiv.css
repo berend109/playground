@@ -1,15 +1,14 @@
 #logAndRegisterDiv {
-    font-family: Arial, Helvetica, sans-serif;
-    border: solid red 1px;
-    width: 75%;
-    margin: auto;
-    margin-top: 5%;
-    text-align: center;
-    position: relative;
+	border: solid red 1px;
+	max-width: 600px;
+	margin: auto;
+	margin-top: 5%;
+	text-align: center;
+	position: relative;
 }
 
 #changeLoginAndRegisterButton {
-    position: absolute;
-    top: 0;
-    right: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
