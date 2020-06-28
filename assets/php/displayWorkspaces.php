@@ -16,7 +16,7 @@ function checkDir($scannedDir) {
 			echo '<br><br>';
 			echo 'Workspace not found ('. $directory. ')';
 			$_SESSION['dirToRemove'] = $directory;
-			echo '<form action="assets/php/remove.php">';
+			echo '<form action="remove.php">';
 			echo '<button>Remove Directory</button>';
 			echo '</form>';
 		}

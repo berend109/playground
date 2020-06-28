@@ -11,11 +11,11 @@ $dirToRemove = $_SESSION['dirToRemove'];
 try {
 	$sql = "DELETE FROM `projects` WHERE `projectDir` = ('$dirToRemove')"; 
 	$con->exec($sql);
-	echo 'Dir successfully deleted';
+	echo 'Dir ', $dirToRemove, ' successfully deleted';
 } catch (PDOException $e) {
 	echo $sql . "<br>". $e->getMessage();
 }
 
 echo '<br>';
 echo '<br>';
-echo("<button onclick=\"location.href='../../index.php'\">Back to Home</button>");
+echo("<button onclick=\"location.href='mainScreen.php'\">Back to Home</button>");
