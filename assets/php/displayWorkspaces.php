@@ -25,16 +25,13 @@ function checkDir($scannedDir) {
 
 // if the dir exist it will display each project as a button.
 function displayWorkspace($directory) {
-	// scan for projects in the dir.
 	// also gets rids of . and .. in unix.
 	$scanned_directory = array_diff(scandir($directory), array('..', '.'));
 
-	// displays the name of the folder where the project nest in.
 	echo '<p>'. $directory. '</p>';
 
-	// displays each project as a button to the screen.
 	foreach ($scanned_directory as $value) {
-		if ($value != 'playground' && $value != '.idea') {
+		if ($value != 'playground') {
 			echo '<form action="../'. $value. '" target="_blank">';
 			echo '<button>'. $value. '</button>';
 			echo '<br>';

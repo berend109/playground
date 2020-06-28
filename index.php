@@ -5,26 +5,41 @@
 
 	<title>Playground</title>
 
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="assets/css/logAndRegisterDiv.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/globalFont.css">
+
 </head>
 <body>
 
-	<p>Welcome to the playground</p>
+	<div id="logAndRegisterDiv">
+		<p>Welcome to the playground</p>
 
-    <div id="playground-div">
-        <?php
-			require_once 'assets/php/displayWorkspaces.php';
-			
-			$scannedDir = (getDir($con, $scannedDir));
-			checkDir($scannedDir);
-        ?>
+		<div id="login-div">
+			<form method="post" action="assets/php/login.php">
+				<p>login to see your personal playground</p>
+				<input type="text" placeholder="name">
+				<input type="password" placeholder="password">
+				<button>Log in</button>
+			</form>
+		</div>
 
-		<form  method='POST' action='assets/php/send.php'>
-			<br><br>
-			<p>Add your new workspace to the playground</p>
-			Dir: <input type='text' name='input'/>
-    		<button type='submit'>Submit</button>
-		</form>
+		<div id="register-div" hidden>
+			<form method="post" action="assets/php/register.php">
+				<p>get yourself an account to have your own playground</p>
+				<input type="text" placeholder="name">
+				<input type="password" placeholder="password">
+				<button>register</button>
+			</form>
+		</div>
+
+		<div id="changeLoginAndRegisterButton">
+			<button id="button" type="button" onclick="changeLoginAndRegisterButton()">Register</button>
+		</div>
 	</div>
+
+	<!-- javascript -->
+	<script src='assets/js/loginRegisterForm.js'></script>
 
 </body>
 </html>

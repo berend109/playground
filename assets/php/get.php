@@ -12,15 +12,14 @@ function getDir($con, $scannedDir) {
 		$stmt = $con->prepare("SELECT `projectDir` FROM `projects` WHERE 1");
 		$stmt->execute();
 
-		$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-		foreach(($stmt->fetchAll()) as $k=>$v) {
-			array_push($scannedDir, $v);
+		foreach(($stmt->fetchAll()) as $dbDirectory) {
+			array_push($scannedDir, $dbDirectory);
 		}
-	}
-	catch(PDOException $e) {
+	} catch (PDOException $e) {
 		echo "Error: " . $e->getMessage();
 	}
+	
 	$conn = null;
 
-return $scannedDir;
+	return $scannedDir;
 }

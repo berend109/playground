@@ -17,7 +17,6 @@ $input = $_POST['input'];
 // windows setting
 $input = addslashes($input);
 
-
 echo $input;
 
 try {
@@ -26,6 +25,7 @@ try {
 	$stmt->execute();
 
 	echo "New record created successfully";
+
 }
 catch(PDOException $e) {
 	echo "some custom error";
