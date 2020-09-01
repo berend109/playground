@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 06, 2020 at 10:17 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.5
+-- Generation Time: Sep 01, 2020 at 08:22 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,13 +31,6 @@ CREATE TABLE `projects` (
   `projectDir` text NOT NULL,
   `ID` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `projects`
---
-
-INSERT INTO `projects` (`projectDir`, `ID`) VALUES
-('/opt/lampp/htdocs/workspace/github.com/berend109/', 4);
 
 --
 -- Indexes for dumped tables
