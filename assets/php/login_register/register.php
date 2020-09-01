@@ -21,14 +21,14 @@ class register {
 				$_SESSION['name'] = $_POST['name'];
 				echo "Username or password allready exists";
 
-				echo "<button onclick=\"window.location.href='../../../';\"></button>";
+				echo "<button onclick=\"window.location.href='../../../';\">Go back</button>";
 			} else {
 				$stmt = $con->prepare("INSERT INTO `users`(`name`, `password`) VALUES ('$name', '$pswd')");
 				$stmt->execute();
 
 				echo "register successful";
 
-				echo "<button onclick=\"window.location.href='../../../';\"></button>";
+				echo "<button onclick=\"window.location.href='../../../';\">Go back</button>";
 			}
 		} catch (PDOException $e) {
 			echo "Something went wrong: ".$e->getMessage();
