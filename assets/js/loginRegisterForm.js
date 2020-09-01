@@ -1,4 +1,4 @@
-function changeLoginAndRegisterButton() {
+function swapLoginRegister() {
 	var login = document.getElementById("login-div")
 	var rigister = document.getElementById("register-div")
 	var button = document.getElementById("button")

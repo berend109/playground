@@ -33,8 +33,8 @@
 			</form>
 		</div>
 
-		<div id="changeLoginAndRegisterButton">
-			<button id="button" type="button" onclick="changeLoginAndRegisterButton()">Register</button>
+		<div id="swapLoginRegister">
+			<button id="button" type="button" onclick="swapLoginRegister()">Register</button>
 		</div>
 	</div>
 
