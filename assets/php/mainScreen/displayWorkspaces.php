@@ -4,7 +4,7 @@ session_start();
 
 require_once 'get.php';
 
-// first check if dir even exist that is stored in the DB.
+// first check if dir exist that is stored in the DB.
 function checkDir($scannedDir) {
 	foreach ($scannedDir as $directory) {
 		$directory = array_shift($directory);
@@ -13,6 +13,7 @@ function checkDir($scannedDir) {
 		if ($checkIfDirExist == true) {
 			displayWorkspace($directory);
 		} else {
+			// if the dir does not exist on the machine you can remove it.
 			echo '<br><br>';
 			echo 'Workspace not found ('. $directory. ')';
 			$_SESSION['dirToRemove'] = $directory;
@@ -23,7 +24,7 @@ function checkDir($scannedDir) {
 	}
 }
 
-// if the dir exist it will display each project as a button.
+// if the dir exist on your machine it will display each project as a button.
 function displayWorkspace($directory) {
 	// also gets rids of . and .. in unix.
 	$scanned_directory = array_diff(scandir($directory), array('..', '.'));
