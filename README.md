@@ -1,3 +1,2 @@
 # playground
-An private playground where I can acces all my project's from one page.
-This is made just for fun and learn.
+An private playground where I can acces all my projects from one page this is made just for fun and to learn.
