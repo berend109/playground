@@ -51,5 +51,13 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 		</form>
 	</div>
 
+	<div id="logout">
+		<form methode="post" >
+			<br><br> <!--break before styling --> 
+			<p>logout of your playground here !!</p>
+			<button><a href="signout.php">Sign out</button></a>
+		</form>
+	</div>
+
 </body>
 </html>
