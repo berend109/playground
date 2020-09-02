@@ -52,11 +52,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 	</div>
 
 	<div id="logout">
-		<form methode="post" >
-			<br><br> <!--break before styling --> 
-			<p>logout of your playground here !!</p>
-			<button><a href="signout.php">Sign out</button></a>
-		</form>
+		<br><br> <!--break before styling --> 
+		<p>logout of your playground here !!</p>
+		<button><a href="signout.php">Sign out</button></a>
 	</div>
 
 </body>
