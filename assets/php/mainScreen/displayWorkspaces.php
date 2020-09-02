@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 require_once 'get.php';
 
 // first check if dir exist that is stored in the DB.

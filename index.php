@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    include_once 'assets/php/conn.php';
+?>
+
 <!DOCTYPE html>
 <html lang="eng">
 
@@ -19,8 +24,8 @@
 		<div id="login-div">
 			<form method="post" action="assets/php/login_register/login.php">
 				<p>login to see your personal playground</p>
-				<input type="text" placeholder="name">
-				<input type="password" placeholder="password">
+				<input name="name" type="text" placeholder="name">
+				<input name="pswd" type="password" placeholder="password">
 				<button>Log in</button>
 			</form>
 		</div>

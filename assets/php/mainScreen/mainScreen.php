@@ -1,3 +1,18 @@
+<?php
+
+if(!isset($_SESSION)) 
+{ 
+	session_start(); 
+}
+
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+} else {
+    echo "You are not logged in !!";
+    header("Refresh:5; url=../../../index.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="eng">
 
@@ -8,7 +23,15 @@
 </head>
 <body>
 
-	<p>Welcome to the playground</p>
+	<p>Welcome to your playground: 
+	<?php
+		if (isset ($_SESSION['loggedin']) == true) {
+			echo $_SESSION['name'];
+		} else {
+			echo 'Username';
+		}
+	?>
+	</p>
 
 	<div id="playground-div">
 		<?php
@@ -17,9 +40,11 @@
 		$scannedDir = getDir($con, $scannedDir);
 		checkDir($scannedDir);
 		?>
+	</div>
 
+	<div id="addWorkspace">
 		<form  method='POST' action='send.php'>
-			<br><br>
+			<br><br> <!--break before styling --> 
 			<p>Add your new workspace to the playground</p>
 			Dir: <input type='text' name='input'/>
 			<button type='submit'>Submit</button>
