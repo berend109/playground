@@ -36,9 +36,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 	<div id="playground-div">
 		<?php
 		require_once 'displayWorkspaces.php';
-
-		$scannedDir = getDir($con, $scannedDir);
-		checkDir($scannedDir);
 		?>
 	</div>
 
@@ -52,9 +49,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 	</div>
 
 	<div id="logout">
-		<br><br> <!--break before styling --> 
+		<br><br> <!--break fore styling -->
 		<p>logout of your playground here !!</p>
-		<button><a href="signout.php">Sign out</button></a>
+		<button><a href="./signout.php">Sign out</button></a>
 	</div>
 
 </body>

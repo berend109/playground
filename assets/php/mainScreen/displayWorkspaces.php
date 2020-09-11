@@ -38,3 +38,6 @@ function displayWorkspace($directory) {
 		}
 	}
 }
+
+$scannedDir = getDir($con, $scannedDir);
+checkDir($scannedDir);
