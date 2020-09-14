@@ -31,7 +31,7 @@ function displayWorkspace($directory) {
 
 	foreach ($scanned_directory as $value) {
 		if ($value != 'playground') {
-			echo '<form action="../'. $value. '" target="_blank">';
+			echo '<form action="../../../../'. $value. '" target="_blank">';
 			echo '<button>'. $value. '</button>';
 			echo '<br>';
 			echo '</form>';
