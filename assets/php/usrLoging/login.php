@@ -26,7 +26,7 @@ class login {
 			header("Refresh:0; url=../mainScreen/mainScreen.php");
 		} else {
 			echo "wrong password or username
-				<a href=\"../../../index.html\">TRY AGAIN !!</a>";
+				<a href=\"../../../index.php\">TRY AGAIN !!</a>";
 		}
 	}
 }
