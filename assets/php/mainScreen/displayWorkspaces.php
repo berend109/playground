@@ -16,7 +16,7 @@ function checkDir($scannedDir) {
 			echo 'Workspace not found ('. $directory. ')';
 			$_SESSION['dirToRemove'] = $directory;
 			echo '<form action="remove.php">';
-			echo '<button>Remove Directory</button>';
+			echo '<button class="btn btn-danger btn-lg">Remove Directory</button>';
 			echo '</form>';
 		}
 	}
@@ -30,13 +30,19 @@ function displayWorkspace($directory) {
 	echo '<p>'. $directory. '</p>';
 
 	foreach ($scanned_directory as $value) {
-		if ($value != 'playground') {
+		if ($value != 'playground' && $value != 'index.html' && $value != 'index.php') {
 			echo '<form action="../../../../'. $value. '" target="_blank">';
 			echo '<button class="btn btn-info btn-lg">'. $value. '</button>';
 			echo '<br>';
 			echo '</form>';
 		}
 	}
+
+	echo '<br>';
+	$_SESSION['dirToRemove'] = $directory;
+	echo '<form action="remove.php">';
+	echo '<button class="btn btn-danger btn-lg">Remove Directory</button>';
+	echo '</form>';
 }
 
 $scannedDir = getDir($con, $scannedDir);
