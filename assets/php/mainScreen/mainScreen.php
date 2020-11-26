@@ -5,13 +5,7 @@ if(!isset($_SESSION))
 	session_start(); 
 }
 
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-} else {
-    echo "You are not logged in !!";
-    header("Refresh:5; url=../../../index.php");
-}
-
-?>
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { ?>
 
 <!DOCTYPE html>
 <html lang="eng">
@@ -59,10 +53,20 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 	</div>
 
 	<div id="logout">
-		<br><br> <!--break fore styling -->
-		<p>logout of your playground here !!</p>
-		<button class="btn btn-danger">Sign out</button>
+		<form action='signout.php'>
+			<br><br> <!--break fore styling -->
+			<p>logout of your playground here !!</p>
+			<button class="btn btn-danger">Sign out</button>
+		</form>
 	</div>
 
 </body>
 </html>
+<?php
+
+} else {
+    echo "You are not logged in !!";
+    header("Refresh:5; url=../../../index.php");
+}
+
+?>
