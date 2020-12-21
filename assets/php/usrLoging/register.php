@@ -10,8 +10,8 @@ require_once('../conn.php');
 $pdo = new connection;
 $con = $pdo->connect();
 $name = $_POST['name'];
-$pswd = $_POST['pswd'];
-$pswd = password_hash($pswd, PASSWORD_DEFAULT);
+$password = $_POST['pswd'];
+$password = password_hash($password, PASSWORD_DEFAULT);
 
 class register {
 	public function __construct() {}
@@ -24,16 +24,16 @@ class register {
 
 			if ($user) {
 				$_SESSION['name'] = $_POST['name'];
-				echo "Username or password allready exists";
+				echo "Username or password already exists";
 
-				echo "<button onclick=\"window.location.href='../../../';\">Go back</button>";
+				echo "<button onclick=\"window.location.href='http://localhost/';\">Go back</button>";
 			} else {
 				$stmt = $con->prepare("INSERT INTO `users`(`name`, `password`) VALUES ('$name', '$pswd')");
 				$stmt->execute();
 
 				echo "register successful";
 
-				echo "<button onclick=\"window.location.href='../../../';\">Go back</button>";
+				echo "<button onclick=\"window.location.href='http://localhost/';\">Go back</button>";
 			}
 		} catch (PDOException $e) {
 			echo "Something went wrong: ".$e->getMessage();
@@ -42,4 +42,4 @@ class register {
 }
 
 $reg = new register();
-$reg->register($con, $name, $pswd);
+$reg->register($con, $name, $password);
