@@ -1,6 +1,6 @@
 <?php
 
-require_once 'get.php';
+require_once 'getDirectory.php';
 
 // first check if dir exist that is stored in the DB.
 function checkDir($scannedDir) {
