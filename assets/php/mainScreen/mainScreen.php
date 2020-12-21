@@ -5,7 +5,7 @@ if(!isset($_SESSION))
 	session_start(); 
 }
 
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { ?>
+if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) { ?>
 
 <!DOCTYPE html>
 <html lang="eng">
@@ -15,7 +15,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { ?>
 	<title>Playground</title>
 
 	<!-- css -->
-	<link rel="stylesheet" href="../../css/mainScreen/globalFont.css">
+	<link rel="stylesheet" href="../../css/globalFont.css">
 
 	<!-- bootstrap -->
 	<!-- CSS only -->
@@ -29,7 +29,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { ?>
 
 	<p>Welcome to your playground: 
 	<?php
-		if (isset ($_SESSION['loggedin']) == true) {
+		if ($_SESSION['loggedIn']) {
 			echo $_SESSION['name'];
 		} else {
 			echo 'Username';
@@ -53,7 +53,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { ?>
 	</div>
 
 	<div id="logout">
-		<form action='signout.php'>
+		<form action='../usrLoging/logout.php'>
 			<br><br> <!--break fore styling -->
 			<p>logout of your playground here !!</p>
 			<button class="btn btn-danger">Sign out</button>
@@ -65,7 +65,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { ?>
 <?php
 
 } else {
+	var_dump($_SESSION);
     echo "You are not logged in !!";
+    die();
     header("Refresh:5; url=../../../index.php");
 }
 

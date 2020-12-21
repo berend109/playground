@@ -24,8 +24,12 @@
 		<div id="login-div">
 			<form method="post" action="./assets/php/usrLoging/login.php">
 				<p>login to see your personal playground</p>
-				<input name="name" type="text" placeholder="name">
-				<input name="pswd" type="password" placeholder="password">
+				<label>
+					<input name="name" type="text" placeholder="name">
+				</label>
+				<label>
+					<input name="pswd" type="password" placeholder="password">
+				</label>
 				<button>Log in</button>
 			</form>
 		</div>
@@ -33,7 +37,7 @@
 		<div id="register-div" hidden>
 			<form method="post" action="./assets/php/usrLoging/register.php">
 				<!-- There is no security work done. so for now for what ever reason a warning -->
-				<h1>Don't ad youre personal info</h1>
+				<h1>Don't ad you're personal info</h1>
 				<h1>Work in progress</h1>
 				<p>get yourself an account to have your own playground</p>
 				<input name="name" type="text" placeholder="name">

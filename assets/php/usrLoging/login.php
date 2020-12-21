@@ -10,7 +10,7 @@ require_once('../conn.php');
 $pdo = new connection;
 $con = $pdo->connect();
 $name = $_POST['name'];
-$pswd = $_POST['pswd'];
+$password = $_POST['pswd'];
 
 class login {
 	public function __construct() {}
@@ -22,14 +22,14 @@ class login {
 		
 		if ($user && password_verify($pswd, $user['password'])) {
 			$_SESSION["name"] = $_POST['name'];
-			$_SESSION["loggedin"] = true;
+			$_SESSION["loggedIn"] = true;
 			header("Refresh:0; url=../mainScreen/mainScreen.php");
 		} else {
-			echo "wrong password or username
-				<a href=\"../../../index.php\">TRY AGAIN !!</a>";
+			echo "wrong password or username";
+			echo "<button onclick=\"window.location.href='http://localhost/';\">Try again</button>";
 		}
 	}
 }
 
 $login = new login();
-$login->login($con, $name, $pswd);
+$login->login($con, $name, $password);

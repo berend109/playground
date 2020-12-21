@@ -35,7 +35,6 @@ try {
 	$stmt->bindParam(':input', $_REQUEST['input'], PDO::PARAM_STR);
 	$stmt->execute();
 } catch(PDOException $e) {
-	// TODO: create better custom error
 	echo '<br>';
 	echo '<br>';
 	echo $e->getMessage();
