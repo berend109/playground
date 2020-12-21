@@ -39,7 +39,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { ?>
 
 	<div id="playground-div">
 		<?php
-		require_once 'displayWorkspaces.php';
+			require_once 'displayWorkspaces.php';
 		?>
 	</div>
 

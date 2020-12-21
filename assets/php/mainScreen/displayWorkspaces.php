@@ -45,5 +45,5 @@ function displayWorkspace($directory) {
 	echo '</form>';
 }
 
-$scannedDir = getDir($con, $scannedDir);
+$scannedDir = getDirectory($con, $scannedDir);
 checkDir($scannedDir);

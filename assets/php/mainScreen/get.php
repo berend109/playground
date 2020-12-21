@@ -7,7 +7,7 @@ $con = $pdo->connect();
 
 $scannedDir = array();
 
-function getDir($con, $scannedDir) {
+function getDirectory($con, $scannedDir) {
 	try {
 		$stmt = $con->prepare("SELECT `projectDir` FROM `projects` WHERE 1");
 		$stmt->execute();
