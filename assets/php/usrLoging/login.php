@@ -1,8 +1,7 @@
 <?php
 
-if(!isset($_SESSION)) 
-{ 
-	session_start(); 
+if(!isset($_SESSION)) {
+	session_start();
 }
 
 require_once('../conn.php');
@@ -19,7 +18,7 @@ class login {
 		$stmt = $con->prepare("SELECT * FROM `users` WHERE name = ?");
         $stmt->execute([$name]);
 		$user = $stmt->fetch();
-		
+
 		if ($user && password_verify($pswd, $user['password'])) {
 			$_SESSION["name"] = $_POST['name'];
 			$_SESSION["loggedIn"] = true;

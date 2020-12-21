@@ -1,8 +1,7 @@
 <?php
 
-if(!isset($_SESSION)) 
-{ 
-	session_start(); 
+if(!isset($_SESSION)) { 
+	session_start();
 }
 
 if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) { ?>
@@ -27,7 +26,7 @@ if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) { ?>
 </head>
 <body>
 
-	<p>Welcome to your playground: 
+	<p>Welcome to your playground:
 	<?php
 		if ($_SESSION['loggedIn']) {
 			echo $_SESSION['name'];
@@ -45,7 +44,7 @@ if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) { ?>
 
 	<div id="addWorkspace">
 		<form  method='POST' action='send.php'>
-			<br><br> <!--break before styling --> 
+			<br><br> <!--break before styling -->
 			<p>Add your new workspace to the playground</p>
 			<p>Dir: <input type='text' name='input'/></p>
 			<button class="btn btn-success" type='submit'>Submit</button>
