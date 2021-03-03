@@ -20,7 +20,9 @@ class login {
 		$user = $stmt->fetch();
 
 		if ($user && password_verify($pswd, $user['password'])) {
-			$_SESSION["name"] = $_POST['name'];
+			$_SESSION["name"] = $user['name'];
+			$_SESSION["id"] = $user['id'];
+			$_SESSION["role"] = $user['role'];
 			$_SESSION["loggedIn"] = true;
 			header("Refresh:0; url=../mainScreen/mainScreen.php");
 		} else {

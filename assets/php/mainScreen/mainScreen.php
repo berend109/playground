@@ -43,7 +43,7 @@ if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) { ?>
 	</div>
 
 	<div id="addWorkspace">
-		<form  method='POST' action='send.php'>
+		<form  method='POST' action='sendDirectory.php'>
 			<br><br> <!--break before styling -->
 			<p>Add your new workspace to the playground</p>
 			<p>Dir: <input type='text' name='input'/></p>

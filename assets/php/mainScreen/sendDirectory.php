@@ -16,24 +16,26 @@
 
 <?php
 
+session_start();
+
 require_once '../conn.php';
 
 $pdo = new connection;
 $con = $pdo->connect();
 
-$stmt = $con->prepare("INSERT INTO `projects`(`projectDir`) VALUES (:input)");
+$id = $_SESSION['id'];
+
+$stmt = $con->prepare("INSERT INTO `projects`(`projectDir`, `userId`) VALUES (:input, $id)");
 
 // display the filepath that will be added.
 echo $_POST['input'];
-echo '<br>';
-echo '<br>';
 
 try {
-	echo "New record created successfully";
-
 	// Bind the input to the statement we prepared
-	$stmt->bindParam(':input', $_REQUEST['input'], PDO::PARAM_STR);
+	$stmt->bindParam(':input', $_REQUEST['input']);
 	$stmt->execute();
+	echo "<br><br>";
+	echo "New record created successfully";
 } catch(PDOException $e) {
 	echo '<br>';
 	echo '<br>';
