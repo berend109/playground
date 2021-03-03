@@ -1,6 +1,6 @@
 <?php
-    session_start();
-    include_once 'assets/php/conn.php';
+session_start();
+include_once 'assets/php/conn.php';
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +16,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/globalFont.css">
 
 </head>
+
 <body>
 
 	<div id="logAndRegister">
@@ -56,4 +57,5 @@
 	<script src='assets/js/validateForm.js'></script>
 
 </body>
+
 </html>

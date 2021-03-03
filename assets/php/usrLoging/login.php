@@ -1,6 +1,6 @@
 <?php
 
-if(!isset($_SESSION)) {
+if (!isset($_SESSION)) {
 	session_start();
 }
 
@@ -11,12 +11,16 @@ $con = $pdo->connect();
 $name = $_POST['name'];
 $password = $_POST['pswd'];
 
-class login {
-	public function __construct() {}
+class login
+{
+	public function __construct()
+	{
+	}
 
-	public function login($con, $name, $pswd) {
+	public function login($con, $name, $pswd)
+	{
 		$stmt = $con->prepare("SELECT * FROM `users` WHERE name = ?");
-        $stmt->execute([$name]);
+		$stmt->execute([$name]);
 		$user = $stmt->fetch();
 
 		if ($user && password_verify($pswd, $user['password'])) {

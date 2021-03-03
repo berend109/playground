@@ -1,6 +1,6 @@
 <?php
 
-if(!isset($_SESSION)) { 
+if (!isset($_SESSION)) {
 	session_start();
 }
 
@@ -12,10 +12,14 @@ $name = $_POST['name'];
 $password = $_POST['pswd'];
 $password = password_hash($password, PASSWORD_DEFAULT);
 
-class register {
-	public function __construct() {}
+class register
+{
+	public function __construct()
+	{
+	}
 
-	public function register($con, $name, $pswd) {
+	public function register($con, $name, $pswd)
+	{
 		try {
 			$stmt = $con->prepare("SELECT * FROM `users` WHERE name = ?");
 			$stmt->execute([$name]);
@@ -35,7 +39,7 @@ class register {
 				echo "<button onclick=\"window.location.href='http://localhost/';\">Go back</button>";
 			}
 		} catch (PDOException $e) {
-			echo "Something went wrong: ".$e->getMessage();
+			echo "Something went wrong: " . $e->getMessage();
 		}
 	}
 }
