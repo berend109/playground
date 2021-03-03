@@ -64,10 +64,10 @@ if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) { ?>
 <?php
 
 } else {
-	var_dump($_SESSION);
     echo "You are not logged in !!";
-    die();
-    header("Refresh:5; url=../../../index.php");
+	echo "<br><br>";
+	echo "<button onclick=\"window.location.href='http://localhost/';\">Go to login screen</button>";
+    header("Refresh:10; url=../../../index.php");
 }
 
 ?>
