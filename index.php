@@ -22,26 +22,26 @@
 		<p>Welcome to the playground</p>
 
 		<div id="login-div">
-			<form method="post" action="./assets/php/usrLoging/login.php">
+			<form name="loginForm" method="post" onsubmit="return validateForm()" action="./assets/php/usrLoging/login.php">
 				<p>login to see your personal playground</p>
 				<label>
-					<input name="name" type="text" placeholder="name">
+					<input name="name" type="text" placeholder="name" required>
 				</label>
 				<label>
-					<input name="pswd" type="password" placeholder="password">
+					<input name="pswd" type="password" placeholder="password" required>
 				</label>
 				<button>Log in</button>
 			</form>
 		</div>
 
 		<div id="register-div" hidden>
-			<form method="post" action="./assets/php/usrLoging/register.php">
-				<!-- There is no security work done. so for now for what ever reason a warning -->
+			<form name="registerForm" method="post" onsubmit="return validateForm()" action="./assets/php/usrLoging/register.php">
+				<!-- There is no security work done. so for now for what ever reason there is a warning -->
 				<h1>Don't add your personal info</h1>
 				<h1>Work in progress</h1>
 				<p>get yourself an account to have your own playground</p>
-				<input name="name" type="text" placeholder="name">
-				<input name="pswd" type="password" placeholder="password">
+				<input name="name" type="text" placeholder="name" required>
+				<input name="pswd" type="password" placeholder="password" required>
 				<button>register</button>
 			</form>
 		</div>
@@ -53,6 +53,7 @@
 
 	<!-- javascript -->
 	<script src='assets/js/loginRegisterForm.js'></script>
+	<script src='assets/js/validateForm.js'></script>
 
 </body>
 </html>

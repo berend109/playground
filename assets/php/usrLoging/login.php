@@ -30,5 +30,11 @@ class login {
 	}
 }
 
-$login = new login();
-$login->login($con, $name, $password);
+if (strlen($name) >= 1 && strlen($password)) {
+	$login = new login();
+	$login->login($con, $name, $password);
+} else {
+	echo "Fill out the form";
+	echo "<br><br>";
+	echo "<button onclick=\"window.location.href='http://localhost/';\">Go back</button>";
+}

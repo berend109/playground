@@ -24,14 +24,14 @@ class register {
 			if ($user) {
 				$_SESSION['name'] = $_POST['name'];
 				echo "Username or password already exists";
-
+				echo "<br><br>";
 				echo "<button onclick=\"window.location.href='http://localhost/';\">Go back</button>";
 			} else {
 				$stmt = $con->prepare("INSERT INTO `users`(`name`, `password`) VALUES ('$name', '$pswd')");
 				$stmt->execute();
 
 				echo "register successful";
-
+				echo "<br><br>";
 				echo "<button onclick=\"window.location.href='http://localhost/';\">Go back</button>";
 			}
 		} catch (PDOException $e) {
@@ -40,5 +40,11 @@ class register {
 	}
 }
 
-$reg = new register();
-$reg->register($con, $name, $password);
+if (strlen($name) >= 1 && strlen($password)) {
+	$reg = new register();
+	$reg->register($con, $name, $password);
+} else {
+	echo "Fill out the form";
+	echo "<br><br>";
+	echo "<button onclick=\"window.location.href='http://localhost/';\">Go back</button>";
+}
