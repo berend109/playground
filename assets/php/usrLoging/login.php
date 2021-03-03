@@ -25,6 +25,7 @@ class login {
 			header("Refresh:0; url=../mainScreen/mainScreen.php");
 		} else {
 			echo "wrong password or username";
+			echo "<br><br>";
 			echo "<button onclick=\"window.location.href='http://localhost/';\">Try again</button>";
 		}
 	}
