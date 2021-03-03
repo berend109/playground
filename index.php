@@ -37,7 +37,7 @@
 		<div id="register-div" hidden>
 			<form method="post" action="./assets/php/usrLoging/register.php">
 				<!-- There is no security work done. so for now for what ever reason a warning -->
-				<h1>Don't ad you're personal info</h1>
+				<h1>Don't add your personal info</h1>
 				<h1>Work in progress</h1>
 				<p>get yourself an account to have your own playground</p>
 				<input name="name" type="text" placeholder="name">

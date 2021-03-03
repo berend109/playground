@@ -1,14 +1,14 @@
 function swapLoginRegister() {
 	var login = document.getElementById("login-div")
-	var rigister = document.getElementById("register-div")
+	var register = document.getElementById("register-div")
 	var button = document.getElementById("button")
 	if (login.style.display === "none") {
 		login.style.display = "block"
-		rigister.style.display = "none"
+		register.style.display = "none"
 		button.innerHTML = "register"
 	} else {
 		login.style.display = "none"
-		rigister.style.display = "block"
+		register.style.display = "block"
 		button.innerHTML = "login"
 	}
 }
