@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 25, 2020 at 09:37 PM
--- Server version: 10.4.16-MariaDB
--- PHP Version: 7.4.12
+-- Gegenereerd op: 03 mrt 2021 om 21:00
+-- Serverversie: 10.4.17-MariaDB
+-- PHP-versie: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,54 +24,56 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `projects`
+-- Tabelstructuur voor tabel `projects`
 --
 
 CREATE TABLE `projects` (
   `projectDir` text NOT NULL,
-  `ID` int(255) NOT NULL
+  `id` int(255) NOT NULL,
+  `userId` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Tabelstructuur voor tabel `users`
 --
 
 CREATE TABLE `users` (
   `name` text NOT NULL,
   `password` text NOT NULL,
-  `id` int(255) NOT NULL
+  `id` int(255) NOT NULL,
+  `role` tinyint(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Indexes for dumped tables
+-- Indexen voor geëxporteerde tabellen
 --
 
 --
--- Indexes for table `projects`
+-- Indexen voor tabel `projects`
 --
 ALTER TABLE `projects`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Indexen voor tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT voor geëxporteerde tabellen
 --
 
 --
--- AUTO_INCREMENT for table `projects`
+-- AUTO_INCREMENT voor een tabel `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT voor een tabel `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
