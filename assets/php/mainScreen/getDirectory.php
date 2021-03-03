@@ -9,8 +9,10 @@ $scannedDir = array();
 
 function getDirectory($con, $scannedDir) {
 	try {
-		$stmt = $con->prepare("SELECT `projectDir` FROM `projects` WHERE 1");
-		$stmt->execute();
+		$userid = $_SESSION['id'];
+
+		$stmt = $con->prepare("SELECT `projectDir` FROM `projects` WHERE `userId` = ?");
+		$stmt->execute([$userid]);
 
 		foreach(($stmt->fetchAll()) as $dbDirectory) {
 			array_push($scannedDir, $dbDirectory);
