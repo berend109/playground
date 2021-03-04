@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once 'assets/php/conn.php';
+include_once 'assets/php/db/connection.php';
 ?>
 
 <!DOCTYPE html>

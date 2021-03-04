@@ -16,7 +16,7 @@
 	<?php
 	session_start();
 
-	require_once '../conn.php';
+	require_once '../db/connection.php';
 	$pdo = new connection;
 	$con = $pdo->connect();
 
