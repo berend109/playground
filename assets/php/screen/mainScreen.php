@@ -4,7 +4,9 @@ if(!isset($_SESSION)) {
 	session_start();
 }
 
-if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) { ?>
+$loggedin = $_SESSION['loggedIn'];
+
+if (isset($_SESSION['loggedIn']) && $loggedin == true) { ?>
 
 <!DOCTYPE html>
 <html lang="eng">
@@ -36,14 +38,31 @@ if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) { ?>
 	?>
 	</p>
 
+	<?php 
+	
+	// id 1 == admin
+	if($_SESSION['id'] == 1) { 
+		echo "je bent dus een admin"; 
+	} else { 
+		echo "je bent dus geen admin ";
+	}
+	
+	echo '<div id="adminpanel">';
+	echo '<form action="./adminScreen.php">';
+	echo '<button class="btn btn-danger btn-lg">Go to admin panel</button>';
+	echo '</form>';
+	echo '</div>';
+	
+	?>
+
 	<div id="playground-div">
 		<?php
-			require_once 'displayWorkspaces.php';
+			require_once '../directory/displayWorkspaces.php';
 		?>
 	</div>
 
 	<div id="addWorkspace">
-		<form  method='POST' action='sendDirectory.php'>
+		<form  method='POST' action='../directory/sendDirectory.php'>
 			<br><br> <!--break before styling -->
 			<p>Add your new workspace to the playground</p>
 			<p>Dir: <input type='text' name='input'/></p>
@@ -67,7 +86,7 @@ if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) { ?>
     echo "You are not logged in !!";
 	echo "<br><br>";
 	echo "<button onclick=\"window.location.href='http://localhost/';\">Go to login screen</button>";
-    header("Refresh:10; url=../../../index.php");
+    header("Refresh:10; url=http://localhost/");
 }
 
 ?>

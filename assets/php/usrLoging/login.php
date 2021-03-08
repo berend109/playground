@@ -28,7 +28,7 @@ class login
 			$_SESSION["id"] = $user['id'];
 			$_SESSION["role"] = $user['role'];
 			$_SESSION["loggedIn"] = true;
-			header("Refresh:0; url=../mainScreen/mainScreen.php");
+			header("Refresh:0; url=../screen/mainScreen.php");
 		} else {
 			echo "wrong password or username";
 			echo "<br><br>";
