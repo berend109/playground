@@ -57,7 +57,7 @@ if (isset($_SESSION['loggedIn']) && $loggedin == true) { ?>
 
 	<div id="playground-div">
 		<?php
-			require_once '../directory/displayWorkspaces.php';
+			require_once '../directory/displayDirectory.php';
 		?>
 	</div>
 
