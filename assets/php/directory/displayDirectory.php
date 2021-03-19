@@ -33,7 +33,7 @@ function displayWorkspace($directory)
 
 	foreach ($scanned_directory as $value) {
 		if ($value != 'playground' && $value != 'index.html' && $value != 'index.php') {
-			echo '<form action="../../../../' . $value . '" target="_blank">';
+			echo '<form action="http://localhost/' . $value . '" target="_blank">';
 			echo '<button class="btn btn-info btn-lg">' . $value . '</button>';
 			echo '<br>';
 			echo '</form>';
